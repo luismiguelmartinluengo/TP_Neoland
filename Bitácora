@@ -6,3 +6,6 @@ Se cargan las dos tabla y se unen (merge) por las columnas Provincias, ccaa_norm
 Se relaciona la tabla Desigualdad económica con la tabla Provincias y con la tabla años.
 Se ocultan los campos de union Provincia y Anio
 Se cambia el resumen por defecto de las columnas con indicadores de desigualdad (gini y p80p20) a promedio (average)
+Explicación de los indicadores:
+Gini - cuánto se desvían los extremos de la media, como está distribuida la riqueza, valores proximo a 0 indican que la riqueza está muy homogéneamente distribuida y valores próximos a 1 indica que hay unos pocos con mucho dinero y la mayoría con poco.
+P80p20 - división del la media de ingresos del 20% de la población con mayores ingresos entre la media de ingresois del 20% de la población con menores ingresos.
