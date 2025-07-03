@@ -6,6 +6,25 @@ Se cargan las dos tabla y se unen (merge) por las columnas Provincias, ccaa_norm
 Se relaciona la tabla Desigualdad económica con la tabla Provincias y con la tabla años.
 Se ocultan los campos de union Provincia y Anio
 Se cambia el resumen por defecto de las columnas con indicadores de desigualdad (gini y p80p20) a promedio (average)
+
 Explicación de los indicadores:
 Gini - cuánto se desvían los extremos de la media, como está distribuida la riqueza, valores proximo a 0 indican que la riqueza está muy homogéneamente distribuida y valores próximos a 1 indica que hay unos pocos con mucho dinero y la mayoría con poco.
 P80p20 - división del la media de ingresos del 20% de la población con mayores ingresos entre la media de ingresois del 20% de la población con menores ingresos.
+
+
+3Jul25 - 21:45
+-Hemos añadido un nuevo dato, el relativo a edad media de la población, por provincia y año (no disponible por trimestre). Tenemos la edad media de hombre, de mujeres y total. Generamos dataset con nuevo scritp python, subimos a Power BI y relacionamos en modelo semánticos. Ajustamos la sumarización por defecto de los indicadores a Average.
+
+- Hablamos con German sobre el enfoque del proyecto:
+  + OK al planteamiento de priorizar el uso de diferentes herramientas y técnicas vistas durante el curso frente a la limitación de la disponibilidad de datos
+  + Recomendación de que no nos enfoquemos solo en el aspecto técnico sino que busquemos la utilidad de la solución, aunque sepamos que los datos no son suficientes ni suficientemente buenos como para generar una solución comercial, que intentemos buscar una utilidad práctica al trabajo de analícita. Dicho esto, no hace falta que tengan que relacionarse todos los datos a todos los niveles. Si unos solo se pueden relacionar por año, pues se usan solo por año, y si los hay que se pueden relacioanr por trimestre pues por trimestre. Tampoco hace falta relacionar todos los datos en el modelo semántico, Se pueden sacar conclusiones analíticas simplemente comparando dos gráficos distintos aunque no puedan relacionarse en el modelo
+
+Por último revisamos los indicadores que tenemos incluidos en el modelo y tomamos decisiones sobre la generación de medidas por tabla:
+criminalidad --> indice de criminalidad: numero de delitos por cada 10K habitantes
+población --> añadir medida de porcentaje de hombres sobre mujeres o viceversa
+inmigración --> medidas de porcentaje de inmigrantes respecto al total de la población
+sociedades --> medidas de numero de sociedades / importe desembolso por 10K habitantes
+desigualdad económico --> no hay que generar otras medidas, solo asegurarse que dan los valores adecuados en cada nivel de agregación que vayamos a usar
+Tasas (empleo) --> tampoco hay que hacer medidas
+IPC --> tampoco requiere medidas
+Edad media --> tampoco requiere medidas específicas.
