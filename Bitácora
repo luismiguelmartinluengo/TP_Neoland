@@ -1,0 +1,8 @@
+3Jul25 - 08:30
+Se crea la tabla "Desigualdad económica" a partir de las tablas "proyecciones_gini_prov" y "proyecciones_p80p20_prov"
+En la carga de tablas se rellenan nulos manualmente. El perfil de la columna me ofrece el promedio y aplico un relleno de columna con ese valor en cada columna
+Después se pivotan las columnas anuales para sacar una fila por año y provincia.
+Se cargan las dos tabla y se unen (merge) por las columnas Provincias, ccaa_norm y Año.
+Se relaciona la tabla Desigualdad económica con la tabla Provincias y con la tabla años.
+Se ocultan los campos de union Provincia y Anio
+Se cambia el resumen por defecto de las columnas con indicadores de desigualdad (gini y p80p20) a promedio (average)
