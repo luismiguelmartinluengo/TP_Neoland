@@ -28,3 +28,16 @@ desigualdad económico --> no hay que generar otras medidas, solo asegurarse que
 Tasas (empleo) --> tampoco hay que hacer medidas
 IPC --> tampoco requiere medidas
 Edad media --> tampoco requiere medidas específicas.
+
+4Jul25 - 22:00
+Hola chavales. Hoy me he estado pegando con la formulación DAX para sacar los índices de criminalidad, que al final será el índice de criminalidad trimestral (ITC), de tal forma que si se calcula para un año, se tiene que calcular la media de los 4 trimestres y dividirlo entre la media de población de esos 4 trimestres. La función, como está funciona si se muestra la información por provincia: ICT drogas = (AVERAGE('Criminalidad_Provincial'[drogas])/AVERAGE(Poblacion[Total poblacion]))*10000, pero no lo muestra bien si se elimina la dimensión Provincia ya que hace la media de todos los trimestres de todos las provincias y lo divide entre toda la población, lo que hace que el índice salga más bajo de lo que debería. ¿Que hacer? Pues podemos intentar corregirla para que de el dato correcto sin provincia o podemos dejarlo así siguiendo la filosofía que nos decía ayer German y asegurándonos que mostramos los datos solo desglosado por provincia, que por otro lado era la idea.  Bueno, de momento lo he dejado así y ya veremos más adelante. He creado los índices para todas las categorías de crímenes y para el total, añadiendo también una columan calculada para que nos de el total de crímienes en una provincia y trimestre y haciendo el cálculo de ITC sobre esta columna. He organizado las métricas en carpetas para que sea más fácil después trabajar con ellas.
+
+Otra cosa, he empezado la tarde pegándome con las métricas porque no salían bien, hasta que me he dado cuenta que teníamos mal planteado el modelo semántico desde el punto de vista de las relaciones de años, trimestres meses. Nos habíamos obcecado en mantener la estructura que nos daría un calendario pero reformulado para obtener relaciones uno a varios, pero eso era un error, no tiene sentido, se eliminamos el calendario no hay que mantener la jerarquía y solo trabajar las tablas como dimensiones independientes, con la única salvedad que para cada mes le corresponde un trimestre, relación que si hay que mantener pero modificando la dirección del filtro para que funcione bien. Bueno, en resumidas cuentas, que en "Informe PBI_v3" está el modelo correcto.
+
+Pero viendo la complejidad que va tomando esto, voy a ir un paso más este finde con una nueva versión a ver cómo lo veís.... objetivo: cepillarme la dimensión mes... no tiene sentido conservarla añadiendo mucha complejidad. Lo que quiero hacer es coger el fichero de IPC, que es el único que lo tenemos por mes y generar la media trimestral en python y subir ese fichero, trimestral, al modelo, cepillándonos así la tabla de dimensión meses y la relación especial que teníamos que mantener en el modelo solo para esa tabla. Lo creo todo en nueva versión del informe para darle marcha atrás si finalmente queréis mantener el dato mensual.
+
+
+
+
+
+
