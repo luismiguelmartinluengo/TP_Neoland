@@ -36,8 +36,23 @@ Otra cosa, he empezado la tarde pegándome con las métricas porque no salían b
 
 Pero viendo la complejidad que va tomando esto, voy a ir un paso más este finde con una nueva versión a ver cómo lo veís.... objetivo: cepillarme la dimensión mes... no tiene sentido conservarla añadiendo mucha complejidad. Lo que quiero hacer es coger el fichero de IPC, que es el único que lo tenemos por mes y generar la media trimestral en python y subir ese fichero, trimestral, al modelo, cepillándonos así la tabla de dimensión meses y la relación especial que teníamos que mantener en el modelo solo para esa tabla. Lo creo todo en nueva versión del informe para darle marcha atrás si finalmente queréis mantener el dato mensual.
 
+7Jul25 - 08:25
+Actualizo Infomre Power BI a la versión 4, eliminando la tabla de IPC mensual y sustituyéndola por una tabla de IPC trimestral. El valor trimestral es calculado como la media de los tres meses de cada trimestre.
+En el informe también actualizo las fórmulas DAX de IPC, simplificadas con ayuda de Copilot que me ha ayudado a poner order en la cabeza:
+ICT drogas = DIVIDE(SUM(Criminalidad_Provincial[drogas]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT homicidios_consumados = DIVIDE(SUM(Criminalidad_Provincial[homicidios_consumados]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT homicidios_tentativa = DIVIDE(SUM(Criminalidad_Provincial[homicidios_tentativa]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT hurtos = DIVIDE(SUM(Criminalidad_Provincial[hurtos]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT lesiones = DIVIDE(SUM(Criminalidad_Provincial[lesiones]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT resto = DIVIDE(SUM(Criminalidad_Provincial[resto]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT robos_fuerza = DIVIDE(SUM(Criminalidad_Provincial[robos_fuerza]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT robos_violencia = DIVIDE(SUM(Criminalidad_Provincial[robos_violencia]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT secuestro = DIVIDE(SUM(Criminalidad_Provincial[secuestro]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT sexual_agresion = DIVIDE(SUM(Criminalidad_Provincial[sexual_agresion]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT sexual_otros = DIVIDE(SUM(Criminalidad_Provincial[sexual_otros]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT Total Crimenes = DIVIDE(SUM(Criminalidad_Provincial[Total Crimenes]) * 10000, SUM(Poblacion[Total poblacion]))
+ICT vehiculos = DIVIDE(SUM(Criminalidad_Provincial[vehiculos]) * 10000, SUM(Poblacion[Total poblacion]))
 
+He adjuntado también el notebook "Carga datos IPC.ipynb" incluyendo el cálculo trimestral del IPC así como el fichero resutlante: "IPC.provincia_Trimestre_normalizado.csv"
 
-
-
-
+See you soon
