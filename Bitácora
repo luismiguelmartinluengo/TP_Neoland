@@ -56,3 +56,11 @@ ICT vehiculos = DIVIDE(SUM(Criminalidad_Provincial[vehiculos]) * 10000, SUM(Pobl
 He adjuntado también el notebook "Carga datos IPC.ipynb" incluyendo el cálculo trimestral del IPC así como el fichero resutlante: "IPC.provincia_Trimestre_normalizado.csv"
 
 See you soon
+
+8Jul25
+He subido "Informe PBI_v7.pbix" con el nuevo modelo semántico y las medidas reformuladas.
+@Adrian, por resumir, os tengo que pedir disculpas porque en mi obcecación por un dataset acorde a un modelo predictivo, trasladé ese modelo a Power BI siendo esto un error garrafal... porque una vez definidas las medidas, a la hora de generar objetos visuales nos dismos cuenta de cuan difícil era plantarlo con el desglose de métricas definidas.
+La solución, despivotar las medidas y hacer que queda tabla tuviese una o dos medidas desglosadas por diferentes tipos en su campo específico. En resumidas cuentas, os he hecho trabajar el doble pivotanto campos en python para después tener que despivotarlos en la importación a Power BI, además de haceros trabajar en medidas para un modelo semántico que después ha habido que cambiar. 
+Bueno, creo que está ahora corregido, modelo semántico reformado y medidas construidas a conveniencia. Seguro que encontraremos algo más cuando nos pongamos con los visuales, pero para empezar yo creo que ya podemos tirar.
+Perdonad pero ahora no me da tiempo describir para el resumen las medidas... las sacamos más adelante.
+@Pablo, revisa las medidas a ver si se me ha olvidado alguna
