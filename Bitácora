@@ -64,3 +64,12 @@ La solución, despivotar las medidas y hacer que queda tabla tuviese una o dos m
 Bueno, creo que está ahora corregido, modelo semántico reformado y medidas construidas a conveniencia. Seguro que encontraremos algo más cuando nos pongamos con los visuales, pero para empezar yo creo que ya podemos tirar.
 Perdonad pero ahora no me da tiempo describir para el resumen las medidas... las sacamos más adelante.
 @Pablo, revisa las medidas a ver si se me ha olvidado alguna
+
+17Jul25
+He subido la versión "Informe PBI_v7.1.7.pbix" que incluye:
+  - Página de análisis de factores económicos (sin criminalidad)
+  - Gráfico de dispersión en el análisis de población y criminalidad relacionando delitos con porcentaje de hombres y mujeres. Para esto he creado dos nuevas medidas (% Hombres y % Mujeres)
+  - He cambiado uno de los gráficos que tenías en el análisis de factores económicos con criminalidad para meter esta última y así diferenciarlo del gráfico que había hecho de factores económicos (solos) que al final me salía como la tuya (había llegado al mismo razonamiento de análisis)
+  - Tabla de análisis de factores sociales en la página de clusters de criminalidad
+  - Tabla de análisis de delitos en la página de clusters sociales
+  - Una columna adicional en la tabla de Criminalidad con los tipos de crímenes en versión bonita (asesinatos_tentativa -> Asesinatos en tentativa, etc). He dejado el anterior campo (que ahora se llama "Tipo delito abrv") junto con el nuevo para poder elegir donde se quiera (por si al usar el nuevo en algun gráfico que tengamos se descojona el formato)
